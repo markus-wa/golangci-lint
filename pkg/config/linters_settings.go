@@ -267,6 +267,7 @@ type LintersSettings struct {
 	Revive          ReviveSettings          `mapstructure:"revive"`
 	RowsErrCheck    RowsErrCheckSettings    `mapstructure:"rowserrcheck"`
 	SlogLint        SlogLintSettings        `mapstructure:"sloglint"`
+	SqlCloseCheck   SqlCloseCheckSettings   `mapstructure:"sqlclosecheck"`
 	Spancheck       SpancheckSettings       `mapstructure:"spancheck"`
 	Staticcheck     StaticCheckSettings     `mapstructure:"staticcheck"`
 	TagAlign        TagAlignSettings        `mapstructure:"tagalign"`
@@ -806,6 +807,10 @@ type SlogLintSettings struct {
 	KeyNamingCase  string   `mapstructure:"key-naming-case"`
 	ForbiddenKeys  []string `mapstructure:"forbidden-keys"`
 	ArgsOnSepLines bool     `mapstructure:"args-on-sep-lines"`
+}
+
+type SqlCloseCheckSettings struct {
+	ExtraPackages []string `mapstructure:"extra-packages"`
 }
 
 type SpancheckSettings struct {

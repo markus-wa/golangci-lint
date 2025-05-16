@@ -576,7 +576,7 @@ func (LinterBuilder) Build(cfg *config.Config) ([]*linter.Config, error) {
 			WithAutoFix().
 			WithURL("https://github.com/go-simpler/sloglint"),
 
-		linter.NewConfig(sqlclosecheck.New()).
+		linter.NewConfig(sqlclosecheck.New(&cfg.Linters.Settings.SqlCloseCheck)).
 			WithSince("v1.28.0").
 			WithLoadForGoAnalysis().
 			WithURL("https://github.com/ryanrolds/sqlclosecheck"),
